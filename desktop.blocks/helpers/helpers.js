@@ -1,0 +1,1 @@
+BEM.helpers || (BEM.helpers = {});
