@@ -7,24 +7,10 @@
         { elem: 'css', url: '_index.ie.css', ie: 'gte IE 6' },
         { elem: 'meta', attrs: { name: 'description', content: '' }}
     ],
-    content:[
+    content: [
         {
-            block: 'header',
-            content: [
-                'header content goes here'
-            ]
-        },
-        {
-            block: 'content',
-            content: [
-                'main content'
-            ]
-        },
-        {
-            block: 'footer',
-            content: [
-                'footer content goes here'
-            ]
+            block: 'total-amount',
+            total: 100500
         },
         { block: 'i-jquery', mods: { version: '1.8.3' } },
         { elem: 'js', url: '_index.js' }
