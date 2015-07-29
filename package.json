@@ -11,18 +11,18 @@
   },
   "dependencies": {
     "bem-environ": "~1.4.0",
-    "bower": "^1.4.1"
+    "bh": "^3.3.0",
+    "bower": "^1.4.1",
+    "enb-bh": "^0.5.0"
   },
   "devDependencies": {
     "bem": "0.10.0",
-    "bem-bl-xjst": "^2.1.4",
     "borschik": "^1.4.0",
     "borschik-tech-cleancss": "^1.0.3",
     "enb": "^0.16.0",
     "enb-autoprefixer": "^0.3.0",
-    "enb-bem-techs": "^1.0.4",
-    "enb-borschik": "^1.5.1",
-    "enb-xjst": "^1.2.0"
+    "enb-bem-techs": "v2.0.0-beta1",
+    "enb-borschik": "^1.5.1"
   },
   "scripts": {
     "start": "enb server",

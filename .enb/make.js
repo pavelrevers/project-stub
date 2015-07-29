@@ -14,8 +14,8 @@ var techs = {
         js: require('enb/techs/js'),
 
         // bemhtml
-        bemhtml: require('enb-xjst/techs/bemhtml'),
-        htmlFromBemjson: require('enb-xjst/techs/html-from-bemjson')
+        bh: require('enb-bh/techs/bh-server-include'),
+        htmlFromBemjson: require('enb-bh/techs/html-from-bemjson')
     },
     enbBemTechs = require('enb-bem-techs'),
     levels = [
@@ -44,16 +44,17 @@ module.exports = function(config) {
                 browserSupport: ['last 2 versions', 'ie 10', 'opera 12.1']
             }],
 
-            // bemhtml
-            [techs.bemhtml, { devMode: process.env.BEMHTML_ENV === 'development' }],
-            [techs.htmlFromBemjson],
+            // bh
+            [techs.bh, {
+                target: '?.bh.js',
+                sourceSuffixes: ['vanilla.js', 'bh.js'],
+                jsAttrName: 'data-bem',
+                jsAttrScheme: 'json'
+            }],
+            [techs.htmlFromBemjson, { bhFile: '?.bh.js' }],
 
             // js
-            [techs.js, { target: '?.pre.js' }],
-            [techs.fileMerge, {
-                target: '?.js',
-                sources: ['?.bemhtml.js', '?.pre.js']
-            }],
+            [techs.js, { sourceSuffixes: ['vanilla.js', 'js'], target: '?.js' }],
 
             // borschik
             [techs.borschik, { sourceTarget: '?.js', destTarget: '_?.js', freeze: true, minify: isProd }],
