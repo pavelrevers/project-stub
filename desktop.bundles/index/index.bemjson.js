@@ -482,7 +482,20 @@ module.exports = {
         {
             block : 'footer',
             content : [
-                'footer content goes here'
+                {
+                    "block": "kg-appbar",
+                    "content": [{
+                        "elem": "panel",
+                        "content": [{
+                            "elem": "logo",
+                            "content": {
+                                "block": "logo",
+                                "mods": {},
+                                "content": [{"block": "logo", "elem": "img", "mods": {}}, {"tag": "span", "content": "Сотрудник"}]
+                            }
+                        }, {"elem": "app-title"}, {"elem": "controls", "content": [{"block": "user", "mods": {}}]}]
+                    }, {"elem": "progressbar", "mods": {"indeterminate": true}}, [{}]]
+                }
             ]
         }
     ]

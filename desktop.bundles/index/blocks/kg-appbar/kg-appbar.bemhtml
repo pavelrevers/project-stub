@@ -1,0 +1,14 @@
+block('kg-appbar')(
+    js()(true),
+    tag()('header'),
+    elem('title').tag()('h1'),
+    elem('panel')(
+        tag()('nav'),
+        def()(function(){
+            return applyCtx({
+                elem: 'placeholder',
+                content: this.ctx
+            });
+        })
+    )
+);
