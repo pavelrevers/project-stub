@@ -4,11 +4,11 @@ block('kg-appbar')(
     elem('title').tag()('h1'),
     elem('panel')(
         tag()('nav'),
-        def()(function(){
-            return applyCtx({
+        wrap()(function(){
+            return {
                 elem: 'placeholder',
                 content: this.ctx
-            });
+            };
         })
     )
 );
