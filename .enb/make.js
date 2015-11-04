@@ -8,6 +8,7 @@ var techs = {
 
         // css
         stylus: require('enb-stylus/techs/stylus'),
+        postcss: require('enb-bundle-postcss/techs/enb-bundle-postcss'),
 
         // js
         browserJs: require('enb-js/techs/browser-js'),
@@ -27,6 +28,7 @@ var techs = {
         { path: 'libs/bem-components/desktop.blocks', check: false },
         { path: 'libs/bem-components/design/common.blocks', check: false },
         { path: 'libs/bem-components/design/desktop.blocks', check: false },
+        { path: 'libs/bem-grid/common.blocks', check: false },
         'common.blocks',
         'desktop.blocks'
     ];
@@ -45,10 +47,30 @@ module.exports = function(config) {
 
             // css
             [techs.stylus, {
-                target: '?.css',
+                target: '?.post.css',
+                sourceSuffixes: ['styl', 'css', 'post.css'],
                 autoprefixer: {
                     browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
                 }
+            }],
+
+            [techs.postcss, {
+                source: '?.post.css',
+                sourcemap: true,
+                plugins: [
+                    require('postcss-mixins'),
+                    require('postcss-for'),
+                    require('postcss-simple-vars')({
+                        variables : {
+                            gridMaxWidth : '1100px',
+                            gridGutter : '10px',
+                            gridFlex : 'flex'
+                        }
+                    }),
+                    require('lost'),
+                    require('cssnext')(),
+                    require('postcss-nested')
+                ]
             }],
 
             // bemtree
