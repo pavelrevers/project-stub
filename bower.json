@@ -9,6 +9,7 @@
     "libs"
   ],
   "dependencies": {
-    "bem-components": "2.4.0"
+    "bem-components": "2.4.0",
+    "bem-suggest": "tadatuta/bem-suggest"
   }
 }
