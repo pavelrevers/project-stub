@@ -1,0 +1,23 @@
+.registry-form__step {
+    background: grey;
+}
+
+.registry-form__step_active {
+    background: blue;
+}
+
+.registry-form__fields {
+    display: none;
+}
+
+.registry-form__fields_visible {
+    display: block;
+}
+
+.registry-form__next.registry-form__next {
+    display: none;
+}
+
+.registry-form__next.registry-form__next_visible {
+    display: block;
+}
