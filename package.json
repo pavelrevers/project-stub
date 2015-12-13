@@ -16,6 +16,7 @@
     "bem": "^0.10.2",
     "borschik-tech-cleancss": "^2.1.0",
     "convergence-loader": "git://github.com/pavelrevers/convergence-loader.git",
+    "yate-loader": "git://github.com/pavelrevers/yate-loader.git",
     "enb": "^1.1.0",
     "enb-bem-techs": "^2.1.0",
     "enb-bemxjst": "^4.0.2",

@@ -1,0 +1,5 @@
+module "button"
+
+match / {
+    <div></div>
+}

@@ -4,7 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         app: './desktop.bundles/index/index.js',
-        vendor: ['webpack/hot/dev-server']
+        common: ['./desktop.blocks/button/button.css']
+        // vendor: ['webpack/hot/dev-server']
     },
     output: {
         path: './build',
@@ -17,7 +18,7 @@ module.exports = {
         inline: true
     },
     resolve: {
-        extensions: ['', '.js', '.css', '.bemdecl.js'],
+        extensions: ['', '.js', '.css', '.bemdecl.js', '.yate'],
         modulesDirectories: ['node_modules', 'app']
     },
     module: {
@@ -36,14 +37,27 @@ module.exports = {
                     ],
                     techs: [
                         'js',
-                        'css'
+                        'css',
+                        'yate'
                     ]
                 }
+            },
+            {
+                test: /\.yate$/,
+                loader: 'yate-loader'
             }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['common'],
+            filename: '[name].css'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['common'],
+            filename: '[name].js'
+        }),
+        // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('[name].css')
     ]
