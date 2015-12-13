@@ -3,9 +3,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './desktop.bundles/index/index.js',
-        common: ['./desktop.blocks/button/button.css']
-        // vendor: ['webpack/hot/dev-server']
+        index: './desktop.bundles/index/index.js',
+        common: ['./desktop.blocks/button/button.css'],
+        vendor: ['ramda']
     },
     output: {
         path: './build',
@@ -50,11 +50,11 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['common'],
+            names: ['common', 'vendor'],
             filename: '[name].css'
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['common'],
+            names: ['common', 'vendor'],
             filename: '[name].js'
         }),
         // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
