@@ -3,9 +3,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './desktop.bundles/index/index.js',
+        index: './desktop.bundles/index/index.js',
         common: ['./desktop.blocks/button/button.css']
-        // vendor: ['webpack/hot/dev-server']
     },
     output: {
         path: './build',

@@ -16,7 +16,7 @@
     "bem": "^0.10.2",
     "borschik-tech-cleancss": "^2.1.0",
     "convergence-loader": "git://github.com/pavelrevers/convergence-loader.git",
-    "yate-loader": "git://github.com/pavelrevers/yate-loader.git",
+    "css-loader": "^0.23.0",
     "enb": "^1.1.0",
     "enb-bem-techs": "^2.1.0",
     "enb-bemxjst": "^4.0.2",
@@ -26,7 +26,8 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "yate-loader": "git://github.com/pavelrevers/yate-loader.git"
   },
   "scripts": {
     "start": "enb server",
